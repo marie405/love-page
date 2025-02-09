@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I LOVE YOU</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            text-align: center;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            opacity: 0.5;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .text-box {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 50%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Hearts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            for (let i = 0; i < 50; i++) {
+                let heart = document.createElement("div");
+                heart.innerHTML = "❤️";
+                heart.classList.add("heart");
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.top = Math.random() * 100 + "vh";
+                heart.style.fontSize = Math.random() * 20 + 10 + "px";
+                heart.style.opacity = Math.random() * 0.5 + 0.5;
+                document.body.appendChild(heart);
+            }
+        });
+    </script>
+
+    <div class="title">My SomeOne</div>
+    <div class="text-box">
+        <p>there comes a time in life where you come across a person that is a deep breath personified. someone who knows what you're thinking simply by the look in your eyes. someone you can laugh until you cry with, someone you can pour your heart out to and you know they'll hold it gently and without judgement, someone who knows how to melt away your stress. someone who challenges you yet handles you with care, someone who reminds you of your strength at your weakest points and you believe them. someone who celebrates you and sings your praises, even when you're not around.
+        someone who softens your heart when things get tough, but would go to war for you in a heartbeat, someone who you can share your stories with, deepening your connection with every page. someone who would never allow you to settle because their faith in you is unwavering. someone you feel you've known in a past life and that you'd find in every lifetime. someone you could spend your entire life thanking and it would never be enough.
+        thank you for being my someone my safe space in human form.
+        if i could wish anything for anyone, it would be to have someone like you.
+        Marie</p>
+    </div>
+    <div class="image-container">
+        <img src="WhatsApp Image 2025-02-09 at 20.19.11_4c3ef8a0.jpg" alt="Love Image">
+    </div>
+</body>
+</html>
