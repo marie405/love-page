@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I LOVE YOU</title>
     <style>
-        body {
+        html, body {
+            height: 100%;
+            overflow-y: auto; /* Ensures scrolling on mobile */
+            -webkit-overflow-scrolling: touch; /* Improves touch scrolling on iOS */
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
             padding: 0;
             text-align: center;
             background-color: white;
             position: relative;
-            overflow: hidden;
         }
         .heart {
             position: absolute;
@@ -23,7 +25,7 @@
         .title {
             font-size: 36px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-top: 20px;
             font-family: 'Times New Roman', Times, serif;
         }
         .text-box {
@@ -31,8 +33,11 @@
             color: white;
             padding: 20px;
             border-radius: 10px;
-            width: 50%;
-            margin: auto;
+            width: 60%;
+            margin: 20px auto;
+            max-height: 70vh; /* Prevents text from blocking scrolling */
+            overflow-y: auto; /* Enables scrolling inside text box */
+            line-height: 1.6;
         }
         .image-container {
             margin-top: 20px;
@@ -40,15 +45,28 @@
         .image-container img {
             width: 50%;
             border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+        @media screen and (max-width: 600px) {
+            .text-box {
+                width: 90%; /* Make text box fit mobile screens */
+                font-size: 14px; /* Reduce text size */
+            }
+            .image-container img {
+                width: 80%; /* Scale image down */
+            }
+            .heart {
+                font-size: 10px !important; /* Reduce floating heart size */
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Background Hearts -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            for (let i = 0; i < 50; i++) {
+            let heartsCount = window.innerWidth < 600 ? 20 : 50; // Reduce hearts on mobile
+            for (let i = 0; i < heartsCount; i++) {
                 let heart = document.createElement("div");
                 heart.innerHTML = "❤️";
                 heart.classList.add("heart");
@@ -61,13 +79,9 @@
         });
     </script>
 
-    <div class="title">My SomeOne</div>
+    <div class="title">My Someone</div>
     <div class="text-box">
-        <p>there comes a time in life where you come across a person that is a deep breath personified. someone who knows what you're thinking simply by the look in your eyes. someone you can laugh until you cry with, someone you can pour your heart out to and you know they'll hold it gently and without judgement, someone who knows how to melt away your stress. someone who challenges you yet handles you with care, someone who reminds you of your strength at your weakest points and you believe them. someone who celebrates you and sings your praises, even when you're not around.
-        someone who softens your heart when things get tough, but would go to war for you in a heartbeat, someone who you can share your stories with, deepening your connection with every page. someone who would never allow you to settle because their faith in you is unwavering. someone you feel you've known in a past life and that you'd find in every lifetime. someone you could spend your entire life thanking and it would never be enough.
-        thank you for being my someone my safe space in human form.
-        if i could wish anything for anyone, it would be to have someone like you.
-        Marie</p>
+        <p>There comes a time in life when you come across a person who is a deep breath personified. Someone who knows what you're thinking simply by the look in your eyes. Someone you can laugh until you cry with, someone you can pour your heart out to, knowing they'll hold it gently without judgment. Someone who challenges you yet handles you with care, reminding you of your strength at your weakest moments. Someone who celebrates you and sings your praises, even when you're not around. Someone who softens your heart when things get tough but would go to war for you in a heartbeat. Someone who you could spend your entire life thanking, and it would never be enough. Thank you for being my someone, my safe space in human form. If I could wish anything for anyone, it would be to have someone like you. <br><br> - Marie</p>
     </div>
     <div class="image-container">
         <img src="WhatsApp Image 2025-02-09 at 20.19.11_4c3ef8a0.jpg" alt="Love Image">
